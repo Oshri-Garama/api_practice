@@ -10,7 +10,7 @@ def hello():
 @app.route('/weather/<city>')
 def weather(city):
     # Get temperature from weather API corresponding to given city
-    weather__api_token = 'a7e9b7cd83166d594a42858290bbc541'
+    weather__api_token = 'insert api key here'
     url = 'http://api.openweathermap.org/data/2.5/weather'
     params = {'q': city, 'units': 'metric', 'appid': weather__api_token}
     response = requests.get(url = url, params = params)
@@ -18,7 +18,7 @@ def weather(city):
     temperature = int(response.json()['main']['temp'])
 
     # Get image url from giphy of the given city from API and hold insert it into IMG html tag
-    giphy_api_token = '2vghJ4ZIBQ4JFPr773qWWoMMf5WuME8a'
+    giphy_api_token = 'insert api key here'
     url = 'http://api.giphy.com/v1/gifs/translate'
     params = {'s': city, 'api_key': giphy_api_token}
     response = requests.get(url=url, params=params)
